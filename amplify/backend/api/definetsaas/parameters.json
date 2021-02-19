@@ -1,5 +1,0 @@
-{
-  "AppSyncApiName": "definetsaas",
-  "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false
-}

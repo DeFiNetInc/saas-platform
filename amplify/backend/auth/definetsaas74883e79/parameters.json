@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "definetsaas94f70086_identitypool_94f70086",
+    "identityPoolName": "definetsaas74883e79_identitypool_74883e79",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "define94f70086",
-    "userPoolName": "definetsaas94f70086_userpool_94f70086",
+    "resourceNameTruncated": "define74883e79",
+    "userPoolName": "definetsaas74883e79_userpool_74883e79",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,10 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "define94f70086_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "define74883e79_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "94f70086",
-    "resourceName": "definetsaas94f70086",
+    "sharedId": "74883e79",
+    "resourceName": "definetsaas74883e79",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -45,19 +45,12 @@
             "Arn"
         ]
     },
-    "useDefault": "defaultSocial",
-    "hostedUI": true,
+    "useDefault": "default",
     "usernameAttributes": [
         "email"
     ],
-    "hostedUIDomainName": "definetsaas94f70086-94f70086",
-    "authProvidersUserPool": [
-        "Google"
-    ],
-    "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
-    "dependsOn": [],
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\",\"https://definet.dev/me/\",\"http://localhost:3000/c/me/\"],\"LogoutURLs\":[\"http://localhost:3000/c/me/\",\"https://definet.dev/\",\"http://localhost:3000/\"]}"
+    "dependsOn": []
 }

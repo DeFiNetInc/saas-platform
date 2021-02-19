@@ -1,28 +1,10 @@
 {
   "auth": {
-    "definetsaas94f70086": {
+    "definetsaas74883e79": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false
-    }
-  },
-  "api": {
-    "definetsaas": {
-      "service": "AppSync",
-      "providerPlugin": "awscloudformation",
-      "output": {
-        "authConfig": {
-          "defaultAuthentication": {
-            "authenticationType": "API_KEY",
-            "apiKeyConfig": {
-              "apiKeyExpirationDays": 7,
-              "description": "definet api key"
-            }
-          },
-          "additionalAuthenticationProviders": []
-        }
-      }
     }
   }
 }

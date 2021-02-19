@@ -1,19 +1,19 @@
 {
-  "prod": {
+  "staging": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-definetsaas-prod-110343-authRole",
-      "UnauthRoleArn": "arn:aws:iam::702658285050:role/amplify-definetsaas-prod-110343-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::702658285050:role/amplify-definetsaas-prod-110343-authRole",
+      "AuthRoleName": "amplify-definetsaas-staging-153525-authRole",
+      "UnauthRoleArn": "arn:aws:iam::702658285050:role/amplify-definetsaas-staging-153525-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::702658285050:role/amplify-definetsaas-staging-153525-authRole",
       "Region": "us-east-2",
-      "DeploymentBucketName": "amplify-definetsaas-prod-110343-deployment",
-      "UnauthRoleName": "amplify-definetsaas-prod-110343-unauthRole",
-      "StackName": "amplify-definetsaas-prod-110343",
-      "StackId": "arn:aws:cloudformation:us-east-2:702658285050:stack/amplify-definetsaas-prod-110343/e1245d90-7202-11eb-8278-06b72adbfdfe",
-      "AmplifyAppId": "d2zvu81nzy3mj6"
+      "DeploymentBucketName": "amplify-definetsaas-staging-153525-deployment",
+      "UnauthRoleName": "amplify-definetsaas-staging-153525-unauthRole",
+      "StackName": "amplify-definetsaas-staging-153525",
+      "StackId": "arn:aws:cloudformation:us-east-2:702658285050:stack/amplify-definetsaas-staging-153525/16bbbc80-72c8-11eb-a742-0a3a82231b4a",
+      "AmplifyAppId": "dwa7h83qsdqxm"
     },
     "categories": {
       "auth": {
-        "definetsaas94f70086": {}
+        "definetsaas74883e79": {}
       }
     }
   }
