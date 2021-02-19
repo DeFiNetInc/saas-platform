@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import PropTypes from "prop-types";
+import React from "react";
 import { List, Paper, withStyles } from "@material-ui/core";
 
 const styles = {
@@ -9,9 +8,6 @@ const styles = {
 };
 
 function Me(props) {
-  const {    
-    classes,    
-  } = props;
   
 
   return (
@@ -23,8 +19,6 @@ function Me(props) {
   );
 }
 
-Me.propTypes = {
-  classes: PropTypes.object.isRequired  
-};
+
 
 export default withStyles(styles)(Me);
