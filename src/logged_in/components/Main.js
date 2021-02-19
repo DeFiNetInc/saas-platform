@@ -8,6 +8,7 @@ import ConsecutiveSnackbarMessages from "../../shared/components/ConsecutiveSnac
 import smoothScrollTop from "../../shared/functions/smoothScrollTop";
 import persons from "../dummy_data/persons";
 import LazyLoadAddBalanceDialog from "./subscription/LazyLoadAddBalanceDialog";
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 
 const styles = (theme) => ({
   main: {
@@ -362,4 +363,4 @@ Main.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles, { withTheme: true })(memo(Main));
+export default withAuthenticator(withStyles(styles, { withTheme: true })(memo(Main)));

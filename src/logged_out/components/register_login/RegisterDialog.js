@@ -14,6 +14,9 @@ import HighlightedInformation from "../../../shared/components/HighlightedInform
 import ButtonCircularProgress from "../../../shared/components/ButtonCircularProgress";
 import VisibilityPasswordTextField from "../../../shared/components/VisibilityPasswordTextField";
 
+import { Auth } from 'aws-amplify'
+
+
 const styles = (theme) => ({
   link: {
     transition: theme.transitions.create(["background-color"], {
@@ -39,6 +42,26 @@ function RegisterDialog(props) {
   const registerTermsCheckbox = useRef();
   const registerPassword = useRef();
   const registerPasswordRepeat = useRef();
+  const registerEmail = useRef();
+
+  async function signUp({ username, password, email }, setStatus, setIsLoading ) {
+    try {
+      console.log("params: ", username, password, email);
+      setStatus(null);
+      setIsLoading(true);
+      await Auth.signUp({
+        username, password, attributes: { email }
+      })
+      console.log('sign up success!')
+      setStatus("accountCreated")
+    } catch (err) {
+      console.log('error signing up..', err["message"])
+      setStatus(null);
+    }
+    
+    setIsLoading(false);
+
+  }
 
   const register = useCallback(() => {
     if (!registerTermsCheckbox.current.checked) {
@@ -51,11 +74,17 @@ function RegisterDialog(props) {
       setStatus("passwordsDontMatch");
       return;
     }
-    setStatus(null);
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1500);
+    let email = registerEmail.current.value;
+    let password = registerPassword.current.value;
+    console.log("email: ", email )
+    console.log("password: ", password)
+    // Letting email also serve as usernames
+    signUp({
+      username: email, 
+      password: password,
+       email: email
+    }, setStatus, setIsLoading);
+  
   }, [
     setIsLoading,
     setStatus,
@@ -63,6 +92,7 @@ function RegisterDialog(props) {
     registerPassword,
     registerPasswordRepeat,
     registerTermsCheckbox,
+    registerEmail,
   ]);
 
   return (
@@ -79,6 +109,9 @@ function RegisterDialog(props) {
       hasCloseIcon
       content={
         <Fragment>
+          <button
+            onClick={() => Auth.federatedSignIn({provider: 'Google'})}
+          >Sign In with Google</button>
           <TextField
             variant="outlined"
             margin="normal"
@@ -87,6 +120,7 @@ function RegisterDialog(props) {
             error={status === "invalidEmail"}
             label="Email Address"
             autoFocus
+            inputRef={registerEmail}
             autoComplete="off"
             type="email"
             onChange={() => {

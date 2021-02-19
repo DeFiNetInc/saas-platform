@@ -6,6 +6,7 @@ import Dashboard from "./dashboard/Dashboard";
 import Posts from "./posts/Posts";
 import Subscription from "./subscription/Subscription";
 import PropsRoute from "../../shared/components/PropsRoute";
+import Me from './me/Me'
 
 const styles = (theme) => ({
   wrapper: {
@@ -86,6 +87,10 @@ function Routing(props) {
           pushMessageToSnackbar={pushMessageToSnackbar}
           selectSubscription={selectSubscription}
           openAddBalanceDialog={openAddBalanceDialog}
+        />
+        <PropsRoute
+          path="/c/me"
+          component={Me}          
         />
         <PropsRoute
           path=""

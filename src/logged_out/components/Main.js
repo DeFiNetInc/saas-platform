@@ -11,6 +11,7 @@ import dummyBlogPosts from "../dummy_data/blogPosts";
 import DialogSelector from "./register_login/DialogSelector";
 import Routing from "./Routing";
 import smoothScrollTop from "../../shared/functions/smoothScrollTop";
+import { Auth } from 'aws-amplify'
 
 AOS.init({ once: true });
 
@@ -32,13 +33,13 @@ function Main(props) {
   const selectHome = useCallback(() => {
     smoothScrollTop();
     document.title =
-      "WaVer - Free template for building a SaaS or admin application";
+      "DeFiNet: For Creators, By Creators";
     setSelectedTab("Home");
   }, [setSelectedTab]);
 
   const selectBlog = useCallback(() => {
     smoothScrollTop();
-    document.title = "WaVer - Blog";
+    document.title = "DeFiNet - Blog";
     setSelectedTab("Blog");
   }, [setSelectedTab]);
 
@@ -52,9 +53,8 @@ function Main(props) {
   }, [setDialogOpen]);
 
   const openRegisterDialog = useCallback(() => {
-    setDialogOpen("register");
-    setIsMobileDrawerOpen(false);
-  }, [setDialogOpen, setIsMobileDrawerOpen]);
+    Auth.federatedSignIn();
+  }, []);
 
   const openTermsDialog = useCallback(() => {
     setDialogOpen("termsOfService");
