@@ -5,9 +5,9 @@ export const onCreateUser = /* GraphQL */ `
   subscription OnCreateUser {
     onCreateUser {
       id
-      email
       firstName
       lastName
+      email
       platforms {
         items {
           id
@@ -27,9 +27,9 @@ export const onUpdateUser = /* GraphQL */ `
   subscription OnUpdateUser {
     onUpdateUser {
       id
-      email
       firstName
       lastName
+      email
       platforms {
         items {
           id
@@ -49,9 +49,9 @@ export const onDeleteUser = /* GraphQL */ `
   subscription OnDeleteUser {
     onDeleteUser {
       id
-      email
       firstName
       lastName
+      email
       platforms {
         items {
           id
@@ -75,16 +75,16 @@ export const onCreatePlatform = /* GraphQL */ `
       userID
       user {
         id
-        email
         firstName
         lastName
+        email
         platforms {
           nextToken
         }
         createdAt
         updatedAt
       }
-      pages {
+      posts {
         items {
           id
           platformID
@@ -107,16 +107,16 @@ export const onUpdatePlatform = /* GraphQL */ `
       userID
       user {
         id
-        email
         firstName
         lastName
+        email
         platforms {
           nextToken
         }
         createdAt
         updatedAt
       }
-      pages {
+      posts {
         items {
           id
           platformID
@@ -139,16 +139,16 @@ export const onDeletePlatform = /* GraphQL */ `
       userID
       user {
         id
-        email
         firstName
         lastName
+        email
         platforms {
           nextToken
         }
         createdAt
         updatedAt
       }
-      pages {
+      posts {
         items {
           id
           platformID
@@ -163,9 +163,9 @@ export const onDeletePlatform = /* GraphQL */ `
     }
   }
 `;
-export const onCreatePage = /* GraphQL */ `
-  subscription OnCreatePage {
-    onCreatePage {
+export const onCreatePost = /* GraphQL */ `
+  subscription OnCreatePost {
+    onCreatePost {
       id
       platformID
       platform {
@@ -174,13 +174,13 @@ export const onCreatePage = /* GraphQL */ `
         userID
         user {
           id
-          email
           firstName
           lastName
+          email
           createdAt
           updatedAt
         }
-        pages {
+        posts {
           nextToken
         }
         createdAt
@@ -192,9 +192,9 @@ export const onCreatePage = /* GraphQL */ `
     }
   }
 `;
-export const onUpdatePage = /* GraphQL */ `
-  subscription OnUpdatePage {
-    onUpdatePage {
+export const onUpdatePost = /* GraphQL */ `
+  subscription OnUpdatePost {
+    onUpdatePost {
       id
       platformID
       platform {
@@ -203,13 +203,13 @@ export const onUpdatePage = /* GraphQL */ `
         userID
         user {
           id
-          email
           firstName
           lastName
+          email
           createdAt
           updatedAt
         }
-        pages {
+        posts {
           nextToken
         }
         createdAt
@@ -221,9 +221,9 @@ export const onUpdatePage = /* GraphQL */ `
     }
   }
 `;
-export const onDeletePage = /* GraphQL */ `
-  subscription OnDeletePage {
-    onDeletePage {
+export const onDeletePost = /* GraphQL */ `
+  subscription OnDeletePost {
+    onDeletePost {
       id
       platformID
       platform {
@@ -232,13 +232,13 @@ export const onDeletePage = /* GraphQL */ `
         userID
         user {
           id
-          email
           firstName
           lastName
+          email
           createdAt
           updatedAt
         }
-        pages {
+        posts {
           nextToken
         }
         createdAt

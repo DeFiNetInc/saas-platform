@@ -1,0 +1,22 @@
+type User @model {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  email: String!
+  platforms: [Platform] @connection(keyName: "byUser", fields: ["id"])
+}
+
+type Platform @model @key(name: "byUser", fields: ["userID"]) {
+  id: ID!
+  name: String!
+  userID: ID!
+  user: User @connection(fields: ["userID"])
+  posts: [Post] @connection(keyName: "byPlatform", fields: ["id"])
+}
+
+type Post @model @key(name: "byPlatform", fields: ["platformID", "description"]) {
+  id: ID!
+  platformID: ID!
+  platform: Platform @connection(fields: ["platformID"])
+  description: String!
+}

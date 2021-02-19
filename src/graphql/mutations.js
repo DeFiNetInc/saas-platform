@@ -8,9 +8,9 @@ export const createUser = /* GraphQL */ `
   ) {
     createUser(input: $input, condition: $condition) {
       id
-      email
       firstName
       lastName
+      email
       platforms {
         items {
           id
@@ -33,9 +33,9 @@ export const updateUser = /* GraphQL */ `
   ) {
     updateUser(input: $input, condition: $condition) {
       id
-      email
       firstName
       lastName
+      email
       platforms {
         items {
           id
@@ -58,9 +58,9 @@ export const deleteUser = /* GraphQL */ `
   ) {
     deleteUser(input: $input, condition: $condition) {
       id
-      email
       firstName
       lastName
+      email
       platforms {
         items {
           id
@@ -87,16 +87,16 @@ export const createPlatform = /* GraphQL */ `
       userID
       user {
         id
-        email
         firstName
         lastName
+        email
         platforms {
           nextToken
         }
         createdAt
         updatedAt
       }
-      pages {
+      posts {
         items {
           id
           platformID
@@ -122,16 +122,16 @@ export const updatePlatform = /* GraphQL */ `
       userID
       user {
         id
-        email
         firstName
         lastName
+        email
         platforms {
           nextToken
         }
         createdAt
         updatedAt
       }
-      pages {
+      posts {
         items {
           id
           platformID
@@ -157,16 +157,16 @@ export const deletePlatform = /* GraphQL */ `
       userID
       user {
         id
-        email
         firstName
         lastName
+        email
         platforms {
           nextToken
         }
         createdAt
         updatedAt
       }
-      pages {
+      posts {
         items {
           id
           platformID
@@ -181,12 +181,12 @@ export const deletePlatform = /* GraphQL */ `
     }
   }
 `;
-export const createPage = /* GraphQL */ `
-  mutation CreatePage(
-    $input: CreatePageInput!
-    $condition: ModelPageConditionInput
+export const createPost = /* GraphQL */ `
+  mutation CreatePost(
+    $input: CreatePostInput!
+    $condition: ModelPostConditionInput
   ) {
-    createPage(input: $input, condition: $condition) {
+    createPost(input: $input, condition: $condition) {
       id
       platformID
       platform {
@@ -195,13 +195,13 @@ export const createPage = /* GraphQL */ `
         userID
         user {
           id
-          email
           firstName
           lastName
+          email
           createdAt
           updatedAt
         }
-        pages {
+        posts {
           nextToken
         }
         createdAt
@@ -213,12 +213,12 @@ export const createPage = /* GraphQL */ `
     }
   }
 `;
-export const updatePage = /* GraphQL */ `
-  mutation UpdatePage(
-    $input: UpdatePageInput!
-    $condition: ModelPageConditionInput
+export const updatePost = /* GraphQL */ `
+  mutation UpdatePost(
+    $input: UpdatePostInput!
+    $condition: ModelPostConditionInput
   ) {
-    updatePage(input: $input, condition: $condition) {
+    updatePost(input: $input, condition: $condition) {
       id
       platformID
       platform {
@@ -227,13 +227,13 @@ export const updatePage = /* GraphQL */ `
         userID
         user {
           id
-          email
           firstName
           lastName
+          email
           createdAt
           updatedAt
         }
-        pages {
+        posts {
           nextToken
         }
         createdAt
@@ -245,12 +245,12 @@ export const updatePage = /* GraphQL */ `
     }
   }
 `;
-export const deletePage = /* GraphQL */ `
-  mutation DeletePage(
-    $input: DeletePageInput!
-    $condition: ModelPageConditionInput
+export const deletePost = /* GraphQL */ `
+  mutation DeletePost(
+    $input: DeletePostInput!
+    $condition: ModelPostConditionInput
   ) {
-    deletePage(input: $input, condition: $condition) {
+    deletePost(input: $input, condition: $condition) {
       id
       platformID
       platform {
@@ -259,13 +259,13 @@ export const deletePage = /* GraphQL */ `
         userID
         user {
           id
-          email
           firstName
           lastName
+          email
           createdAt
           updatedAt
         }
-        pages {
+        posts {
           nextToken
         }
         createdAt

@@ -5,9 +5,9 @@ export const getUser = /* GraphQL */ `
   query GetUser($id: ID!) {
     getUser(id: $id) {
       id
-      email
       firstName
       lastName
+      email
       platforms {
         items {
           id
@@ -32,9 +32,9 @@ export const listUsers = /* GraphQL */ `
     listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        email
         firstName
         lastName
+        email
         platforms {
           nextToken
         }
@@ -53,16 +53,16 @@ export const getPlatform = /* GraphQL */ `
       userID
       user {
         id
-        email
         firstName
         lastName
+        email
         platforms {
           nextToken
         }
         createdAt
         updatedAt
       }
-      pages {
+      posts {
         items {
           id
           platformID
@@ -90,13 +90,13 @@ export const listPlatforms = /* GraphQL */ `
         userID
         user {
           id
-          email
           firstName
           lastName
+          email
           createdAt
           updatedAt
         }
-        pages {
+        posts {
           nextToken
         }
         createdAt
@@ -106,9 +106,9 @@ export const listPlatforms = /* GraphQL */ `
     }
   }
 `;
-export const getPage = /* GraphQL */ `
-  query GetPage($id: ID!) {
-    getPage(id: $id) {
+export const getPost = /* GraphQL */ `
+  query GetPost($id: ID!) {
+    getPost(id: $id) {
       id
       platformID
       platform {
@@ -117,13 +117,13 @@ export const getPage = /* GraphQL */ `
         userID
         user {
           id
-          email
           firstName
           lastName
+          email
           createdAt
           updatedAt
         }
-        pages {
+        posts {
           nextToken
         }
         createdAt
@@ -135,13 +135,13 @@ export const getPage = /* GraphQL */ `
     }
   }
 `;
-export const listPages = /* GraphQL */ `
-  query ListPages(
-    $filter: ModelPageFilterInput
+export const listPosts = /* GraphQL */ `
+  query ListPosts(
+    $filter: ModelPostFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listPages(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listPosts(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         platformID
